@@ -16,6 +16,19 @@ public class Main {
         janNowakServices.dodajWydatek("Energetyki", 200);
 
         janNowakServices.wyswietlPodsumowanie();
-    }
 
+        Firma budimex = new Firma("Budimex", new PodatekLiniowy());
+
+        budimex.dodajPrzychod("Cegły", 15_000);
+        budimex.dodajWydatek("Wypłaty", 5000);
+
+        budimex.wyswietlPodsumowanie();
+
+        Firma januszex = new Firma("Januszex", new SkalaPodatkowa());
+
+        januszex.dodajPrzychod("Areczki", 13_000);
+        januszex.dodajWydatek("Biczownicy", 3000);
+
+        januszex.wyswietlPodsumowanie();
+    }
 }

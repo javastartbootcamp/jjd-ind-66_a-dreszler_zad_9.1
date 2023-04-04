@@ -1,7 +1,8 @@
 package pl.javastart.task;
 
-public class NaCzarno extends FormaOpodatkowania {
-    private String name = "na czarno";
+public class PodatekLiniowy extends FormaOpodatkowania {
+    private static final double OPROCENTOWANIE_LINIOWE = 0.19;
+    private String name = "podatek liniowy";
 
     @Override
     public double wyliczPodatek(double przychody, double wydatki) {
@@ -10,7 +11,9 @@ public class NaCzarno extends FormaOpodatkowania {
             return ERROR;
         }
 
-        return 0;
+        double dochod = przychody - wydatki;
+
+        return dochod * OPROCENTOWANIE_LINIOWE;
     }
 
     @Override
